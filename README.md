@@ -151,14 +151,24 @@ AI involvement is **assistive, not determinative**, and all contributions are su
 
 ## 7. References (IEEE style)
 
-\[1] R. Baumeister and J. Tierney, *Willpower: Rediscovering the Greatest Human Strength.* New York, NY, USA: Penguin, 2011.
-\[2] R. A. Barkley, *ADHD and the Nature of Self-Control.* New York, NY, USA: Guilford Press, 1997.
-\[3] C. Duhigg, *The Power of Habit.* New York, NY, USA: Random House, 2012.
-\[4] N. S. Jacobson, K. S. Martell, and S. D. Dimidjian, *Behavioral Activation Treatment for Depression: A Comprehensive Guide.* New York, NY, USA: Guilford Press, 2001.
-\[5] B. J. Fogg, *Tiny Habits: The Small Changes That Change Everything.* Boston, MA, USA: Houghton Mifflin Harcourt, 2019.
-\[6] D. Bem, “Self-Perception Theory,” *Advances in Experimental Social Psychology*, vol. 6, pp. 1–62, 1972.
-\[7] B. Zeigarnik, “On finished and unfinished tasks,” *Psychologische Forschung*, vol. 9, pp. 1–85, 1927.
-\[8] E. A. Locke and G. P. Latham, *A Theory of Goal Setting and Task Performance.* Englewood Cliffs, NJ, USA: Prentice Hall, 1990.
-\[9] J. Sweller, “Cognitive load during problem solving: Effects on learning,” *Cognitive Science*, vol. 12, no. 2, pp. 257–285, 1988.
-\[10] R. Thaler and C. Sunstein, *Nudge: Improving Decisions About Health, Wealth, and Happiness.* New Haven, CT, USA: Yale Univ. Press, 2008.
-\[11] D. Wood, J. Bruner, and G. Ross, “The role of tutoring in problem solving,” *Journal of Child Psychology and Psychiatry*, vol. 17, no. 2, pp. 89–100, 1976.
+[1] R. Baumeister and J. Tierney, Willpower: Rediscovering the Greatest Human Strength. New York, NY, USA: Penguin, 2011.
+
+[2] R. A. Barkley, ADHD and the Nature of Self-Control. New York, NY, USA: Guilford Press, 1997.
+
+[3] C. Duhigg, The Power of Habit. New York, NY, USA: Random House, 2012.
+
+[4] N. S. Jacobson, K. S. Martell, and S. D. Dimidjian, Behavioral Activation Treatment for Depression: A Comprehensive Guide. New York, NY, USA: Guilford Press, 2001.
+
+[5] B. J. Fogg, Tiny Habits: The Small Changes That Change Everything. Boston, MA, USA: Houghton Mifflin Harcourt, 2019.
+
+[6] D. Bem, “Self-Perception Theory,” Advances in Experimental Social Psychology, vol. 6, pp. 1–62, 1972.
+
+[7] B. Zeigarnik, “On finished and unfinished tasks,” Psychologische Forschung, vol. 9, pp. 1–85, 1927.
+
+[8] E. A. Locke and G. P. Latham, A Theory of Goal Setting and Task Performance. Englewood Cliffs, NJ, USA: Prentice Hall, 1990.
+
+[9] J. Sweller, “Cognitive load during problem solving: Effects on learning,” Cognitive Science, vol. 12, no. 2, pp. 257–285, 1988.
+
+[10] R. Thaler and C. Sunstein, Nudge: Improving Decisions About Health, Wealth, and Happiness. New Haven, CT, USA: Yale Univ. Press, 2008.
+
+[11] D. Wood, J. Bruner, and G. Ross, “The role of tutoring in problem solving,” Journal of Child Psychology and Psychiatry, vol. 17, no. 2, pp. 89–100, 1976.
