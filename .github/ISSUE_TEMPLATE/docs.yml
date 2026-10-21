@@ -1,0 +1,22 @@
+name: Documentation
+description: Changes to README, AGENTS.md, Wiki, or other documentation
+title: "docs: "
+labels: ["type:docs"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to change
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+  - type: textarea
+    id: where
+    attributes:
+      label: Affected documents
+      placeholder: |
+        - README.md
+        - Wiki: <Page-Name>

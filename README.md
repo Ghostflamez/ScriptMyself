@@ -106,11 +106,8 @@ open_notebook -> write_date -> read_summary -> start_exercise(5min)
 
 ## 5. Roadmap
 
-* [ ] Define minimal DSL syntax (sequential, branching, parallel).
-* [ ] Implement interpreter (Python prototype).
-* [ ] Add interactive CLI for script execution.
-* [ ] Integrate reminders & habit-tracking.
-* [ ] User testing with ADHD/procrastination groups.
+The project is currently in **Sprint 0 (requirements engineering)**.
+The backlog and progress are tracked on the [GitHub Project board](https://github.com/Ghostflamez/ScriptMyself/projects); the process is described in the [Wiki](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management).
 
 ---
 

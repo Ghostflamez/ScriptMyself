@@ -1,0 +1,31 @@
+name: Spike
+description: A time-boxed investigation or prototype to reduce uncertainty
+title: "spike: "
+labels: ["type:spike"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question to answer
+      description: What uncertainty does this spike resolve?
+    validations:
+      required: true
+  - type: input
+    id: timebox
+    attributes:
+      label: Timebox
+      placeholder: e.g. 4h, 2 days
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: Options to explore, experiments to run.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected outcome
+      description: The decision or recommendation this spike should produce.
+    validations:
+      required: true
