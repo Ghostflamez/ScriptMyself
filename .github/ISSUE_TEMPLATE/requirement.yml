@@ -1,0 +1,47 @@
+name: Requirement
+description: A requirements-engineering task (elicitation, analysis, specification, validation)
+title: "req: "
+labels: ["type:requirement"]
+body:
+  - type: dropdown
+    id: activity
+    attributes:
+      label: RE activity
+      options:
+        - Elicitation
+        - Analysis
+        - Specification
+        - Validation
+        - Glossary / domain modeling
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What question should this issue answer, or what artifact should it produce?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Background, related issues, sources, stakeholders involved.
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables
+      description: Wiki pages to create or update, decisions to record in AGENTS.md.
+      placeholder: |
+        - [ ] Wiki: <Page-Name>
+        - [ ] AGENTS.md decision log entry
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: true

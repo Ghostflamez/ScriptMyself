@@ -17,7 +17,7 @@
 - **方法论**：Agile
 - **当前 Sprint**：**Sprint 0（无限期）**——需求工程分析阶段。
 - **本阶段边界**：以需求获取、分析、规格化和项目管理基础建设为主；**不进入实现**，除非某个 issue 明确要求做原型/技术验证（spike）。
-- 进度与 backlog 见 Wiki 的 [Project-Management](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management) 页面。
+- Backlog 与进度以 [GitHub Project 看板](https://github.com/users/Ghostflamez/projects/1)（字段：`Status`、`Sprint`）为唯一来源；流程说明见 Wiki 的 [Project-Management](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management) 页面。
 
 ## 3. 上下文体系
 
@@ -25,29 +25,39 @@
 | --- | --- | --- | --- |
 | 顶层 | `AGENTS.md` | 项目关键信息、重要决策、当前阶段 | 长期，只增改不随意删 |
 | 知识库 | [GitHub Wiki](https://github.com/Ghostflamez/ScriptMyself/wiki)（本地克隆于 `wiki/`） | 需求工程产物、项目管理基础（backlog、sprint、术语表等） | 长期，随需求演进 |
-| 过程 | `notes/` | 对话中产生的上下文，**一个 issue 一份** | 随 issue 关闭而压缩归并 |
+| 过程 | `notes/` | 对话中产生的上下文，**一个 issue 一份** | 在该 issue 的 PR merge 前压缩归并 |
 
 ### 3.0 Wiki 本地工作方式
 
-- Wiki 是独立仓库 `https://github.com/Ghostflamez/ScriptMyself.wiki.git`，本地克隆到主仓库的 `wiki/` 目录，该目录已在主仓库 `.gitignore` 中忽略。
+- Wiki 是独立仓库 `https://github.com/Ghostflamez/ScriptMyself.wiki.git`（分支 `master`），本地克隆到主仓库的 `wiki/` 目录，该目录已在主仓库 `.gitignore` 中忽略。
 - 页面为扁平结构（`Home.md`、`_Sidebar.md`、`<Page-Name>.md`），页面间链接用 `[[显示文字|Page-Name]]`。
-- Wiki 改动在 `wiki/` 内单独 commit / push，不经过主仓库 PR；在对应 note 中记录改了哪些页面。
+- Wiki 改动在 `wiki/` 内单独 commit / push，不经过主仓库 PR。
+- **可追溯性**：Wiki commit message 以 `#<issue编号>` 开头；对应 note 与 PR 描述中列出 Wiki commit 哈希及改动页面。
+- Wiki 编辑权限仅限协作者（Settings → Features → Wikis → Restrict editing to collaborators only）。
 
 ### 3.1 notes 生命周期
 
 1. 开始处理某个 issue 时，创建 `notes/issue-<编号>-<简短slug>.md`（模板：[notes/_template.md](notes/_template.md)）。
 2. 处理过程中，对话里产生的关键上下文（讨论、取舍、待定问题、结论）持续追加到该 note。
-3. 当该 issue 对应的 PR 被 merge、issue 被标记为 closed 后：
-   - 将 note **压缩总结**，把长期有效的内容并入本文件（通常是 §4 决策记录，必要时更新 §1/§2）；
-   - 需求/项目管理相关的结论同步到 `wiki/`；
+3. **PR merge 前**，在该 PR 中追加最后一个 commit（`docs: condense notes for #<编号>`）：
+   - 将 note **压缩总结**，把长期有效的内容并入本文件（通常是 §4 决策记录，必要时更新 §1/§2/§5）；
+   - 需求/项目管理相关的结论同步到 Wiki；
    - 删除该 note 文件（原文保留在 git 历史中）。
+4. PR merge 后 issue 自动关闭（PR 描述中写 `Closes #<编号>`），无需再开归并 PR。
 
-### 3.2 AI agent 工作约定
+### 3.2 GitHub 约定
+
+- **Issue**：使用 `.github/ISSUE_TEMPLATE/` 中的模板（requirement / spike / docs / bug），每个 issue 带一个 `type:*` 标签；Sprint 0 的 issue 加 `sprint-0` 标签，加入 Project 看板并设置 `Sprint = Sprint 0`。
+- **分支**：`<type>/<issue编号>-<slug>`，例如 `req/3-user-personas`；`type` ∈ `req`、`spike`、`docs`、`fix`、`chore`。
+- **Commit 与 PR 标题**：遵循 [Conventional Commits](https://www.conventionalcommits.org/)，例如 `docs(req): add user personas`。
+- **PR**：使用 `.github/pull_request_template.md`；`main` 受保护，只能通过 PR 合并。
+
+### 3.3 AI agent 工作约定
 
 - 开始工作前：读 `AGENTS.md` → 确认当前关联的 issue → 读对应 `notes/issue-*.md`（如有）→ 按需读 `wiki/`。
 - 没有关联 issue 的工作，先与维护者确认是否需要建 issue。
 - 不在 `AGENTS.md` 中写过程性内容；不确定放哪里时，先放 note。
-- 与维护者的对话使用中文；**所有 issue 与 PR（标题、描述、评论）必须使用英文**；代码、标识符与 commit message 使用英文。
+- 与维护者的对话使用中文；**所有 issue、PR（标题、描述、评论）与 Wiki 必须使用英文**；代码、标识符与 commit message 使用英文。
 
 ## 4. 决策记录
 
@@ -58,6 +68,18 @@
 | D-001 | 2026-10-21 | 建立三层 AI 上下文体系：`AGENTS.md`（顶层）/ `wiki/`（需求与项目管理）/ `notes/`（按 issue 的过程上下文） | 分离长期知识与过程信息，控制顶层上下文体积 | 维护者指示 |
 | D-002 | 2026-10-21 | 采用 Agile；当前处于无限期 Sprint 0，专注需求工程 | 先厘清需求再进入实现 | 维护者指示 |
 | D-003 | 2026-10-21 | 使用 GitHub Wiki 承载需求工程与项目管理；本地克隆到被忽略的 `wiki/` 目录供 AI 读写 | 维护者偏好 GitHub Wiki；本地克隆保证 AI 可直接访问 | 维护者指示 |
-| D-004 | 2026-10-21 | issue 关闭后 note 压缩并入 `AGENTS.md`，随后直接删除 note（不另设归档） | 保持 `notes/` 只含进行中的上下文；原文可从 git 历史找回 | 维护者指示 |
+| D-004 | 2026-10-21 | ~~issue 关闭后 note 压缩并入 `AGENTS.md`，随后直接删除 note（不另设归档）~~ **已废弃 → D-007** | 保持 `notes/` 只含进行中的上下文；原文可从 git 历史找回 | 维护者指示 |
 | D-005 | 2026-10-21 | 对话使用中文；issue、PR、代码、标识符、commit message 一律使用英文 | 维护者指示 | 维护者指示 |
 | D-006 | 2026-10-21 | 项目初始化 PR（#1，建立上下文规范）不关联 issue；此后所有工作以 issue 为单位 | 初始化先于 issue 流程存在 | PR #1 |
+| D-007 | 2026-10-21 | note 在 issue 的 PR merge **之前**压缩并入 `AGENTS.md`（作为该 PR 最后一个 commit），然后直接删除 note | 避免 merge 后再开无 issue 的归并 PR；归并内容随 PR 一起评审 | PR #1 |
+| D-008 | 2026-10-21 | 统一 LF 换行（`.gitattributes`: `* text=auto eol=lf`） | 消除 Windows 下的 CRLF 警告与混合换行 | PR #1 |
+| D-009 | 2026-10-21 | GitHub 流程：issue/PR 模板、`type:*` + `sprint-0` 标签、GitHub Project 看板作为 backlog 唯一来源、分支命名 `<type>/<issue>-<slug>`、Conventional Commits、`main` 分支保护 | 规范化 Agile 流程，便于 AI 与人协作 | PR #1 |
+| D-010 | 2026-10-21 | 单一信息源：README 只保留愿景，roadmap/backlog 只在 Project 看板维护 | 避免多处重复维护导致不一致 | PR #1 |
+| D-011 | 2026-10-21 | Wiki 改动须可追溯到 issue（commit 前缀 `#<编号>`，并在 note/PR 中记录哈希）；Wiki 仅协作者可编辑 | Wiki 不经过 PR 评审，需要额外追溯手段 | PR #1 |
+| D-012 | 2026-10-21 | Wiki 使用英文（`AGENTS.md`、`notes/` 仍用中文） | 面向开源贡献者；解决 Q-002 | PR #1 |
+
+## 5. 待定问题
+
+| ID | 问题 | 触发时机 |
+| --- | --- | --- |
+| Q-001 | `.gitignore` 目前为 Java 模板，与 README 提到的 Python 原型不符；技术栈确定后替换 | 技术选型 spike 完成时 |
