@@ -107,7 +107,7 @@ open_notebook -> write_date -> read_summary -> start_exercise(5min)
 ## 5. Roadmap
 
 The project is currently in **Sprint 0 (requirements engineering)**.
-The backlog and progress are tracked on the [GitHub Project board](https://github.com/Ghostflamez/ScriptMyself/projects); the process is described in the [Wiki](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management).
+The backlog and progress are tracked on the [GitHub Project board](https://github.com/users/Ghostflamez/projects/1); the process is described in the [Wiki](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management).
 
 ---
 

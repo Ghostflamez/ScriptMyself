@@ -17,7 +17,7 @@
 - **方法论**：Agile
 - **当前 Sprint**：**Sprint 0（无限期）**——需求工程分析阶段。
 - **本阶段边界**：以需求获取、分析、规格化和项目管理基础建设为主；**不进入实现**，除非某个 issue 明确要求做原型/技术验证（spike）。
-- Backlog 与进度以 GitHub Project 看板为唯一来源；流程说明见 Wiki 的 [Project-Management](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management) 页面。
+- Backlog 与进度以 [GitHub Project 看板](https://github.com/users/Ghostflamez/projects/1)（字段：`Status`、`Sprint`）为唯一来源；流程说明见 Wiki 的 [Project-Management](https://github.com/Ghostflamez/ScriptMyself/wiki/Project-Management) 页面。
 
 ## 3. 上下文体系
 
@@ -47,7 +47,7 @@
 
 ### 3.2 GitHub 约定
 
-- **Issue**：使用 `.github/ISSUE_TEMPLATE/` 中的模板（requirement / spike / docs / bug），每个 issue 带一个 `type:*` 标签；Sprint 0 的 issue 加 `sprint-0` 标签并加入 Project 看板。
+- **Issue**：使用 `.github/ISSUE_TEMPLATE/` 中的模板（requirement / spike / docs / bug），每个 issue 带一个 `type:*` 标签；Sprint 0 的 issue 加 `sprint-0` 标签，加入 Project 看板并设置 `Sprint = Sprint 0`。
 - **分支**：`<type>/<issue编号>-<slug>`，例如 `req/3-user-personas`；`type` ∈ `req`、`spike`、`docs`、`fix`、`chore`。
 - **Commit 与 PR 标题**：遵循 [Conventional Commits](https://www.conventionalcommits.org/)，例如 `docs(req): add user personas`。
 - **PR**：使用 `.github/pull_request_template.md`；`main` 受保护，只能通过 PR 合并。
