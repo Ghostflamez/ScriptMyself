@@ -57,7 +57,7 @@
 - 开始工作前：读 `AGENTS.md` → 确认当前关联的 issue → 读对应 `notes/issue-*.md`（如有）→ 按需读 `wiki/`。
 - 没有关联 issue 的工作，先与维护者确认是否需要建 issue。
 - 不在 `AGENTS.md` 中写过程性内容；不确定放哪里时，先放 note。
-- 与维护者的对话使用中文；**所有 issue 与 PR（标题、描述、评论）必须使用英文**；代码、标识符与 commit message 使用英文。
+- 与维护者的对话使用中文；**所有 issue、PR（标题、描述、评论）与 Wiki 必须使用英文**；代码、标识符与 commit message 使用英文。
 
 ## 4. 决策记录
 
@@ -76,10 +76,10 @@
 | D-009 | 2026-10-21 | GitHub 流程：issue/PR 模板、`type:*` + `sprint-0` 标签、GitHub Project 看板作为 backlog 唯一来源、分支命名 `<type>/<issue>-<slug>`、Conventional Commits、`main` 分支保护 | 规范化 Agile 流程，便于 AI 与人协作 | PR #1 |
 | D-010 | 2026-10-21 | 单一信息源：README 只保留愿景，roadmap/backlog 只在 Project 看板维护 | 避免多处重复维护导致不一致 | PR #1 |
 | D-011 | 2026-10-21 | Wiki 改动须可追溯到 issue（commit 前缀 `#<编号>`，并在 note/PR 中记录哈希）；Wiki 仅协作者可编辑 | Wiki 不经过 PR 评审，需要额外追溯手段 | PR #1 |
+| D-012 | 2026-10-21 | Wiki 使用英文（`AGENTS.md`、`notes/` 仍用中文） | 面向开源贡献者；解决 Q-002 | PR #1 |
 
 ## 5. 待定问题
 
 | ID | 问题 | 触发时机 |
 | --- | --- | --- |
 | Q-001 | `.gitignore` 目前为 Java 模板，与 README 提到的 Python 原型不符；技术栈确定后替换 | 技术选型 spike 完成时 |
-| Q-002 | 文档语言：README 为英文，`AGENTS.md` / Wiki 为中文；面向开源贡献者时 Wiki 是否改用英文 | 待维护者决定 |
